@@ -1,5 +1,7 @@
 # Aster — Skin Clinic Website
 
+**Live site: [https://ziahgg.github.io/aster/](https://ziahgg.github.io/aster/)**
+
 Responsive one-page website for **Aster**, a consultation-first skin clinic, built from the Figma design
 (`ziahdesign` → Skin Clinic → *Skin Clinic Homepage — Desktop*, node `116:44772`, plus the 390px Mobile frame).
 
