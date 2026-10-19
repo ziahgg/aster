@@ -1,0 +1,175 @@
+@import 'tailwindcss';
+
+/* Design tokens taken from the Figma file "ziahdesign" → Skin Clinic → node 116:44772. */
+@theme {
+  --font-sans: 'Geist Sans', ui-sans-serif, system-ui, sans-serif;
+
+  --color-ink: #2e1614;
+  --color-wine: #7a3036;
+  --color-cream: #f5f2ec;
+  --color-sand: #e8e3da;
+  --color-stone: #ded7cc;
+  --color-blush: #e2d6cc;
+  --color-line: #cfc5b9;
+  --color-muted: #a3958c;
+  --color-taupe: #8d7f78;
+  --color-body: #56463f;
+  --color-rose: #b88a84;
+  --color-mist: #cfc6b9;
+  --color-sage: #dce0d4;
+  --color-sage-ink: #6f7d66;
+  --color-graphite: #3b3b3b;
+}
+
+/* Type scale. Letter-spacing values are the Figma percentages expressed in em. */
+@utility t-display {
+  font-size: 40px;
+  line-height: 42px;
+  letter-spacing: -0.05em;
+  @variant md {
+    font-size: 60px;
+    line-height: 62px;
+  }
+  @variant lg {
+    font-size: 80px;
+    line-height: 82px;
+  }
+}
+@utility t-h1 {
+  font-size: 32px;
+  line-height: 36px;
+  letter-spacing: -0.04em;
+  @variant md {
+    font-size: 44px;
+    line-height: 48px;
+  }
+  @variant lg {
+    font-size: 54px;
+    line-height: 58px;
+  }
+}
+/* Headlines whose highlighted half is set larger (54px + 60px in the design). */
+@utility t-h1-mixed {
+  font-size: 40px;
+  line-height: 42px;
+  letter-spacing: -0.04em;
+  @variant md {
+    font-size: 48px;
+    line-height: 52px;
+  }
+  @variant lg {
+    font-size: 54px;
+    line-height: 62px;
+  }
+}
+@utility t-accent-lg {
+  @variant lg {
+    font-size: 60px;
+    /* Keeps the larger inline run from growing the 62px line box. */
+    vertical-align: top;
+  }
+}
+@utility t-stat {
+  font-size: 40px;
+  line-height: 42px;
+  letter-spacing: -0.04em;
+  @variant lg {
+    font-size: 56px;
+    line-height: 56px;
+  }
+}
+@utility t-h2 {
+  font-size: 22px;
+  line-height: 26px;
+  letter-spacing: -0.03em;
+  font-weight: 500;
+  @variant lg {
+    font-size: 26px;
+    line-height: 30px;
+  }
+}
+@utility t-h3 {
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: -0.02em;
+  font-weight: 500;
+}
+@utility t-lead {
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.005em;
+  @variant lg {
+    font-size: 18px;
+    line-height: 27px;
+    letter-spacing: -0.01em;
+  }
+}
+@utility t-body {
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.005em;
+}
+@utility t-small {
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.003em;
+}
+@utility t-label {
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: -0.005em;
+  font-weight: 500;
+}
+@utility t-eyebrow {
+  font-size: 11px;
+  line-height: 14px;
+  letter-spacing: 0.06em;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+/* Shared section rhythm: 112/80 on desktop, 64/16 on mobile. */
+@utility section-pad {
+  padding: 64px 16px;
+  @variant md {
+    padding: 88px 40px;
+  }
+  @variant lg {
+    padding: 112px 80px;
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+  body {
+    margin: 0;
+    background: var(--color-wine);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  [id] {
+    scroll-margin-top: 16px;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-wine);
+    outline-offset: 2px;
+  }
+}
+
+/* Hidden scrollbar for the horizontal card rails on mobile. */
+.rail {
+  scrollbar-width: none;
+}
+.rail::-webkit-scrollbar {
+  display: none;
+}
